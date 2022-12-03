@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de teclado e mouse</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+    </ul>
+    <form>
+        <input type="text" name="input" id="inpt" />
+    </form>
+    <script type="text/javascript">
+        //Evento mouseover
+        $('ul').on('mouseover', 'li', function () {
+            console.log('Conteúdo do item da lista: ' + $(this).text());
+        });
+        //Evento mouseleave
+        $('ul').on('mouseleave', 'li', function () {
+            console.log('O mouse não está mais sobre o elemento da lista');
+        });
+        //Evento keypress
+        $('#input').keypress(function (event) {
+            event.preventDefault();
+            console.log('A tecla pressionada foi: ' + event.which);
+        });
+    </script>
+    
+</body>
+</html>
